@@ -1,0 +1,11 @@
+services:
+  assistant-vet-brain:
+    build: .
+    container_name: assistant-vet-brain
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
